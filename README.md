@@ -17,9 +17,6 @@ This project consists of a **complete Active Directory laboratory**, implemented
 ## Environment Structure
 
 - **Domain Controller (DC)**: Windows Server 2019
-- **RAM**: 2GB
-- **CPU**: 1 core
-- **Disk**: 40GB
 - **Network Adapters**:
   - Adapter 1: NAT (Internet)
   - Adapter 2: Internal Network
@@ -27,8 +24,18 @@ This project consists of a **complete Active Directory laboratory**, implemented
     - Subnet: 255.255.255.0
     - DNS: 127.0.0.1
 - **Installed Services**: AD DS, DHCP, NAT/RAS
-- **Clients**: Windows 10 VM (receives IP from the DC)
-
+- **DHCP Scope Configuration**:
+  - IP Range: 172.16.0.100 – 172.16.0.200
+  - Subnet Mask: 255.255.255.0
+  - Default Gateway: 172.16.0.1
+  - DNS Server: 172.16.0.1
+  - Domain Name: mydomain.com
+- **Clients**: Windows 10 VM (domain-joined)
+  - IP Address: Assigned dynamically (e.g., 172.16.0.101)
+  - Subnet Mask: 255.255.255.0
+  - Default Gateway: 172.16.0.1
+  - DNS Server: 172.16.0.1
+  - Hostname example: CLIENT1
 ![Home Lab Architecture](images/ad-screenshot.png)
 
 ---
