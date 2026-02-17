@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Home Lab Active Directory - Simulação Completa
 
 <<<<<<< HEAD
@@ -110,3 +111,6 @@ Este projeto consiste num **laboratório completo de Active Directory**, impleme
 A Home Lab setup simulating a full Active Directory environment, and a script w/ PowerShell to add 1,000 users and integrated network services.
 >>>>>>> refs/remotes/origin/main
 
+=======
+
+>>>>>>> refs/remotes/origin/main
