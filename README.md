@@ -1,116 +1,108 @@
-<<<<<<< HEAD
-# Home Lab Active Directory - Simulação Completa
+# Home Lab Active Directory - Full Simulation
 
-<<<<<<< HEAD
-Este projeto consiste num **laboratório completo de Active Directory**, implementado em máquinas virtuais, com usuários automatizados e integração de serviços de rede, ideal para prática de administração de sistemas e redes.
+This project consists of a **complete Active Directory laboratory**, implemented using virtual machines, with automated user provisioning and integrated network services, ideal for practicing system and network administration.
 
 ---
 
-## Objetivo
+## Objective
 
-- Simular um ambiente corporativo AD real.
-- Criar e gerir 1.000 usuários automaticamente.
-- Configurar serviços de rede essenciais: DHCP, NAT/RAS e VPN.
-- Testar login de clientes Windows 10 no domínio.
-- Aprender e documentar passo a passo a infraestrutura AD.
+- Simulate a real corporate AD environment.
+- Automatically create and manage 1,000 users.
+- Configure essential network services: DHCP, NAT/RAS, and VPN.
+- Test Windows 10 client logins within the domain.
+- Learn and document the AD infrastructure step by step.
 
 ---
 
-## Estrutura do Ambiente
+## Environment Structure
 
 - **Domain Controller (DC)**: Windows Server 2019
 - **RAM**: 2GB
 - **CPU**: 1 core
-- **Disco**: 40GB
-- **Adaptadores de Rede**:
+- **Disk**: 40GB
+- **Network Adapters**:
   - Adapter 1: NAT (Internet)
   - Adapter 2: Internal Network
     - IP: 172.16.0.1
     - Subnet: 255.255.255.0
     - DNS: 127.0.0.1
-- **Serviços instalados**: AD DS, DHCP, NAT/RAS
-- **Clientes**: Windows 10 VM (recebem IP do DC)
+- **Installed Services**: AD DS, DHCP, NAT/RAS
+- **Clients**: Windows 10 VM (receives IP from the DC)
 
-![Arquitetura do Home Lab](images/ad-screenshot.png)
+![Home Lab Architecture](images/ad-screenshot.png)
 
 ---
 
-## Passo a Passo
+## Step-by-Step
 
-### 1️⃣ Instalação do Windows Server 2019 e configuração de rede
-- Criar VM com dois adaptadores:
+### 1️⃣ Windows Server 2019 Installation and Network Configuration
+- Create a VM with two network adapters:
   - **Internet NIC (_INTERNET_)** → NAT
-  - **Internal NIC (_X_internal_X_)** → IP manual 172.16.0.1  
-  ![Print adaptadores de rede](images/Step1_Configure_Network_Adapters.png)
-  ![Print Configuração de Rede Interna](images/Step1_Configure_Network_Adapters.png)
----
-
-### 2️⃣ Configuração do Active Directory
-- Instalar AD Domain Services via Server Manager.
-- Criar novo **forest**: `mydomain.com`
-- Reiniciar servidor.
-- Criar **conta admin** e OU `_ADMINS`:
-  - Usuário: `a-toliveira` (Password1)  
-  ![Print AD Users & Computers - Admin](images/admin-account.png)
-- Login com usuário admin criado.
+  - **Internal NIC (_X_internal_X_)** → Manual IP 172.16.0.1  
+  ![Network Adapters Screenshot](images/network_adapters.png)
+  ![Internal Network Configuration Screenshot](images/config-internal-network.png)
 
 ---
 
-### 3️⃣ Configuração de NAT / RAS
-- Permitir que clientes Windows 10 acedam à Internet via DC.
-- Configuração:
+### 2️⃣ Active Directory Configuration
+- Install Active Directory Domain Services via Server Manager.
+- Create a new **forest**: `mydomain.com`
+- Restart the server.
+- Create an **admin account** and OU `_ADMINS`:
+  - User: `a-toliveira` (Password1)  
+  ![AD Users & Computers - Admin](images/admin-account.png)
+- Log in using the created admin account.
+
+---
+
+### 3️⃣ NAT / RAS Configuration
+- Allow Windows 10 clients to access the Internet through the DC.
+- Configuration path:
   - Server Manager → Remote Access → Routing and Remote Access → Network Address Translation (NAT)  
-  ![Print RAS NAT](images/ras-nat.png)
+  ![RAS NAT Screenshot](images/ras-nat.png)
 
 ---
 
-### 4️⃣ Configuração de DHCP
-- Configurar novo scope:
-  - Faixa IP: 172.16.0.100 – 172.16.0.200
+### 4️⃣ DHCP Configuration
+- Configure a new scope:
+  - IP range: 172.16.0.100 – 172.16.0.200
   - Gateway: 172.16.0.1
   - DNS: 127.0.0.1
   - Domain Name: `mydomain.com`  
-  ![Print DHCP Scope](images/dhcp-scope.png)
+  ![DHCP Scope Screenshot](images/dhcp-scope.png)
 
 ---
 
-### 5️⃣ Criação de 1.000 usuários via PowerShell
+### 5️⃣ Creating 1,000 Users via PowerShell
 - Script: `scripts/create-users.ps1`
-- Senha padrão: `Password1`
-- Nome de usuário: primeira letra do primeiro nome + sobrenome (ex.: Tomas Oliveira → `toliveira`)
-- Procedimento:
-  1. Ler `name.txt` com nomes.
-  2. Converter senha para objeto seguro.
-  3. Criar OU `_USERS`.
-  4. Loop para criar cada usuário no AD.  
-  ![Print script PowerShell](images/powershell-script.png)  
-  ![Print AD Users - 1000 users](images/ad-users.png)
+- Default password: `Password1`
+- Username format: first letter of the first name + last name (e.g., Tomas Oliveira → `toliveira`)
+- Procedure:
+  1. Read `name.txt` containing the list of names.
+  2. Convert the password into a secure string object.
+  3. Create the `_USERS` OU.
+  4. Loop through the list and create each user in AD.  
+  ![PowerShell Script Screenshot](images/powershell-script.png)  
+  ![AD Users - 1000 Users](images/ad-users.png)
 
 ---
 
-### 6️⃣ Configuração do cliente Windows 10
-- VM Windows 10 configurada com adaptador interno.
-- Recebe IP do DC:
+### 6️⃣ Windows 10 Client Configuration
+- Windows 10 VM configured with an internal network adapter.
+- Receives IP from the DC:
   - IP: 172.16.0.100
   - Subnet: 255.255.255.0
   - Gateway: 172.16.0.1  
-  ![Print ipconfig Windows 10](images/client-ipconfig.png)
-- Testes:
-  - `ping www.google.com` → DNS funcionando
-  - `ping mydomain.com` → Resolução do domínio  
-  ![Print ping testes](images/client-ping.png)
-- Renomear hostname para `CLIENT1` e associar ao domínio.
-- Verificar no DHCP e AD:  
-  ![Print DHCP leases](images/dhcp-leases.png)  
-  ![Print AD Computers](images/ad-computers.png)
-- Login de teste com qualquer usuário criado (`aabrev`):
+  ![Windows 10 ipconfig Screenshot](images/client-ipconfig.png)
+- Tests:
+  - `ping www.google.com` → DNS working
+  - `ping mydomain.com` → Domain resolution successful  
+  ![Ping Test Screenshot](images/client-ping.png)
+- Rename hostname to `CLIENT1` and join it to the domain.
+- Verify in DHCP and AD:  
+  ![DHCP Leases Screenshot](images/dhcp-leases.png)  
+  ![AD Computers Screenshot](images/ad-computers.png)
+- Test login with any created user (`aabrev`):
   ```powershell
   whoami
-  # Resultado: mydomain\aabrev
-=======
-A Home Lab setup simulating a full Active Directory environment, and a script w/ PowerShell to add 1,000 users and integrated network services.
->>>>>>> refs/remotes/origin/main
-
-=======
-
->>>>>>> refs/remotes/origin/main
+  # Result: mydomain\aabrev
