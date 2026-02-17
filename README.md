@@ -93,16 +93,18 @@ This project consists of a **complete Active Directory laboratory**, implemented
   - IP: 172.16.0.100
   - Subnet: 255.255.255.0
   - Gateway: 172.16.0.1  
-  ![Windows 10 ipconfig Screenshot](images/client-ipconfig.png)
+  ![Windows 10 ipconfig Screenshot](images/client_ipconfig.png)
 - Tests:
   - `ping www.google.com` → DNS working
   - `ping mydomain.com` → Domain resolution successful  
-  ![Ping Test Screenshot](images/client-ping.png)
+  ![Ping Test google.com](images/client-ping_google.png)
+  ![Ping Test mydomain.com](images/client-ping_mydomain.png)
 - Rename hostname to `CLIENT1` and join it to the domain.
 - Verify in DHCP and AD:  
   ![DHCP Leases Screenshot](images/dhcp-leases.png)  
   ![AD Computers Screenshot](images/ad-computers.png)
 - Test login with any created user (`aabrev`):
+    ![User aabrev](images/login_aabrev.png)
   ```powershell
   whoami
   # Result: mydomain\aabrev
