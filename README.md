@@ -96,8 +96,8 @@ This project consists of a **complete Active Directory laboratory**, implemented
   ![Windows 10 ipconfig Screenshot](images/client_ipconfig.png)
 - Tests:
   - `ping www.google.com` → DNS working
-  - `ping mydomain.com` → Domain resolution successful  
   ![Ping Test google.com](images/client-ping_google.png)
+  - `ping mydomain.com` → Domain resolution successful  
   ![Ping Test mydomain.com](images/client-ping_mydomain.png)
 - Rename hostname to `CLIENT1` and join it to the domain.
 - Verify in DHCP and AD:  
@@ -105,6 +105,3 @@ This project consists of a **complete Active Directory laboratory**, implemented
   ![AD Computers Screenshot](images/ad-computers.png)
 - Test login with any created user (`aabrev`):
     ![User aabrev](images/login_aabrev.png)
-  ```powershell
-  whoami
-  # Result: mydomain\aabrev
