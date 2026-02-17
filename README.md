@@ -45,8 +45,9 @@ This project consists of a **complete Active Directory laboratory**, implemented
 ### 1️⃣ Windows Server 2019 Installation and Network Configuration
 - Create a VM with two network adapters:
   - **Internet NIC (_INTERNET_)** → NAT
-  - **Internal NIC (_X_internal_X_)** → Manual IP 172.16.0.1  
   ![Network Adapters Screenshot](images/network_adapters.png)
+
+  - **Internal NIC (_X_internal_X_)** → Manual IP 172.16.0.1  
   ![Internal Network Configuration Screenshot](images/config-internal-network.png)
 
 ---
