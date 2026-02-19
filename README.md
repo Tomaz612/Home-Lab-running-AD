@@ -1,16 +1,32 @@
 # Home Lab Active Directory - Full Simulation
 
-This project consists of a **complete Active Directory laboratory**, implemented using virtual machines, with automated user provisioning and integrated network services, ideal for practicing system and network administration.
+This project consists of a **fully functional Active Directory lab environment**, built with virtual machines and designed to simulate a real corporate network infrastructure.
 
+The lab integrates core Windows Server services such as:
+
+- Active Directory Domain Services (AD DS)
+- DHCP (Dynamic Host Configuration Protocol)
+- NAT / Routing and Remote Access Services (RAS)
+- DNS (integrated with AD)
+- PowerShell automation for large-scale user provisioning
+
+The infrastructure was designed not only to deploy a domain environment, but also to simulate real-world network behavior including:
+
+- Dynamic IP assignment
+- Internal DNS name resolution
+- Internet access through NAT
+- Domain join operations
+- Centralized authentication and authorization
 ---
 
 ## Objective
 
 - Simulate a real corporate AD environment.
-- Automatically create 1,000 users using PowerShell.
-- Configure essential network services: DHCP, NAT/RAS, and VPN.
-- Test Windows 10 client logins within the domain.
-- Learn and document the AD infrastructure step by step.
+- Deploy and configure AD DS, DHCP, DNS, and NAT/RAS services
+- Automatically create 1,000 domain users using PowerShell scripting
+- Configure and validate domain-joined Windows 10 clients
+- Test authentication, DNS resolution, and network connectivity
+- Document the full infrastructure step by step
 
 ---
 
