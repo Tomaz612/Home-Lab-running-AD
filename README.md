@@ -7,7 +7,7 @@ This project consists of a **complete Active Directory laboratory**, implemented
 ## Objective
 
 - Simulate a real corporate AD environment.
-- Automatically create and manage 1,000 users.
+- Automatically create 1,000 users using PowerShell.
 - Configure essential network services: DHCP, NAT/RAS, and VPN.
 - Test Windows 10 client logins within the domain.
 - Learn and document the AD infrastructure step by step.
@@ -98,7 +98,7 @@ This project consists of a **complete Active Directory laboratory**, implemented
 ### 6️⃣ Windows 10 Client Configuration
 - Windows 10 VM configured with an internal network adapter.
 - Receives IP from the DC:
-  - IP: 172.16.0.100
+  - IP: 172.16.0.101
   - Subnet: 255.255.255.0
   - Gateway: 172.16.0.1  
   ![Windows 10 ipconfig Screenshot](images/client_ipconfig.png)
