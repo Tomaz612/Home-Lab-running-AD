@@ -78,8 +78,8 @@ The infrastructure was designed not only to deploy a domain environment, but als
   
 - In Post-deployment Configuration, Create a new **forest**: `mydomain.com`
 - Restart the server.
-- Create an **admin account** and OU `_ADMINS`:
-  - User: `a-toliveira` (Password1)  
+- Go to Active Directory Users and Computers
+  - Create an **admin account** and OU `_ADMINS`:
   ![AD Users & Computers - Admin](images/admin-account.png)
 - Log in using the created admin account.
 
