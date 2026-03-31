@@ -158,19 +158,23 @@ The infrastructure was designed not only to deploy a domain environment, but als
 ---
 
 ### 6️⃣ Windows 10 Client Configuration
-- Windows 10 VM configured with an internal network adapter.
+- Create and configure a Windows 10 VM with an **internal network** adapter.
 - Receives IP from the DC:
   - IP: 172.16.0.101
   - Subnet: 255.255.255.0
-  - Gateway: 172.16.0.1  
+  - Gateway: 172.16.0.1 
   ![Windows 10 ipconfig Screenshot](images/client_ipconfig.png)
 - Tests:
   - `ping www.google.com` → DNS working
   ![Ping Test google.com](images/client-ping_google.png)
   - `ping mydomain.com` → Domain resolution successful  
   ![Ping Test mydomain.com](images/client-ping_mydomain.png)
+
 - Rename hostname to `CLIENT1` and join it to the domain.
-- Verify in DHCP and AD:  
+  - **Rename this PC (advanced)** → Change
+    - Change from DESKTOP-... **to CLIENT1**
+    - Member of Domain: **mydomain.com**
+- Verify in DHCP and AD: 
   ![DHCP Leases Screenshot](images/dhcp-leases.png)  
   ![AD Computers Screenshot](images/ad-computers.png)
 - Test login with any created user (`aabrev`):
