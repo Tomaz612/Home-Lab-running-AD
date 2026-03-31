@@ -112,24 +112,27 @@ The infrastructure was designed not only to deploy a domain environment, but als
 ---
 
 ### 4️⃣ DHCP Configuration
-- Install DHCP Server via Server Manager (Add roles and features)
+- Install **DHCP Server** via Server Manager (Add roles and features)
 - Configuration path:
   - Server Manager → Tools → DHCP
-    - IPv4 → New Scope 
-      - IP range: 172.16.0.100 – 172.16.0.200
+    - **IPv4** → **New Scope** 
+      - Define IP range: 172.16.0.100 – 172.16.0.200
       ![Define Scope](images/define_scope.png)
       
       
-      - Gateway: 172.16.0.1
+      - Set the **Default Gateway**: 172.16.0.1
       
       ![Add Default Gateway](images/add_default_gateway.png)
       
       
-      - Domain Name DNS Servers: `mydomain.com` and 127.0.0.1
+      - Configure **DNS settings**:
+        - Parent domain: `mydomain.com`
+        - Preferred DNS server: 127.0.0.1
       
       ![DHCP Scope Screenshot](images/dn_and_dnsservers.png)
       
-    - Authorized DHCP Server
+    - Authorized the DHCP Server
+      - Right-click the DHCP server → **Authorize**
     ![Authorized DHCP Server](images/authorized.png)
 
 ---
