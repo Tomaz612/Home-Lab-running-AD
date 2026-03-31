@@ -76,7 +76,7 @@ The infrastructure was designed not only to deploy a domain environment, but als
 - Install Active Directory Domain Services via Server Manager (Add roles and features).
   ![Install Active Directory Domain Services](images/install_ad_ds.png)
   
-- Create a new **forest**: `mydomain.com`
+- In Post-deployment COnfiguration, Create a new **forest**: `mydomain.com`
 - Restart the server.
 - Create an **admin account** and OU `_ADMINS`:
   - User: `a-toliveira` (Password1)  
