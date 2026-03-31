@@ -64,10 +64,13 @@ The infrastructure was designed not only to deploy a domain environment, but als
   ![Network Adapters Screenshot](images/vm_network_adapters.png)
 
 - In Windows Server 2019 go to Settings -> Network & Internet -> Change adapter options
-  - **Internet NIC (_INTERNET_)** → NAT
+
+  - **Internet NIC (_INTERNET_)** → NAT and **Internal NIC (_X_internal_X_)** -> Internal Netowrk
+  
   ![Network Adapters Screenshot](images/network_adapters.png)
 
-  - **Internal NIC (_X_internal_X_)** → Manual IP 172.16.0.1  
+  - **Internal NIC (_X_internal_X_)** → Manual IP 172.16.0.1 
+  
   ![Internal Network Configuration Screenshot](images/config-internal-network.png)
 
 ---
