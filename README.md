@@ -63,7 +63,7 @@ The infrastructure was designed not only to deploy a domain environment, but als
 - Create a VM with two network adapters (NAT + Internal Network)
   ![Network Adapters Screenshot](images/vm_network_adapters.png)
 
-- Go to ...
+- In Windows Server 2019 go to Painel Control -> Network Settings
   - **Internet NIC (_INTERNET_)** → NAT
   ![Network Adapters Screenshot](images/network_adapters.png)
 
