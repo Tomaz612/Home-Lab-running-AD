@@ -148,8 +148,7 @@ The infrastructure was designed not only to deploy a domain environment, but als
 - Copy the entire scripts folder to the Windows Server 2019 machine
 - Open **PowerShell ISE** as Administrator
   - Set the execution policy:
-    - `Set-ExecutionPolicy Unrestricted`
-    ⚠️ (For lab use only — not recommended in production environments)
+    - `Set-ExecutionPolicy Unrestricted` (⚠️ For lab use only — not recommended in production environments)
     
   - Navigate to the script directory (/scripts)
   - Run the script (Click **Run** / **Play**)
