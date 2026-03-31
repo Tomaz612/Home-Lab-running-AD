@@ -59,7 +59,11 @@ The infrastructure was designed not only to deploy a domain environment, but als
 ## Step-by-Step
 
 ### 1️⃣ Windows Server 2019 Installation and Network Configuration
-- Create a VM with two network adapters:
+- Download Windows Server 2019 iso file
+- Create a VM with two network adapters (NAT + Internal Network)
+  ![Network Adapters Screenshot](images/vm_network_adapters.png)
+
+- Go to ...
   - **Internet NIC (_INTERNET_)** → NAT
   ![Network Adapters Screenshot](images/network_adapters.png)
 
