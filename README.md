@@ -174,8 +174,13 @@ The infrastructure was designed not only to deploy a domain environment, but als
   - **Rename this PC (advanced)** → Change
     - Change from DESKTOP-... **to CLIENT1**
     - Member of Domain: **mydomain.com**
+    
+    
 - Verify in DHCP and AD: 
-  ![DHCP Leases Screenshot](images/dhcp-leases.png)  
+
+  ![DHCP Leases Screenshot](images/dhcp-leases.png) 
+  
   ![AD Computers Screenshot](images/ad-computers.png)
+  
 - Test login with any created user (`aabrev`):
     ![User aabrev](images/login_aabrev.png)
