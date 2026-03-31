@@ -119,10 +119,14 @@ The infrastructure was designed not only to deploy a domain environment, but als
       - IP range: 172.16.0.100 – 172.16.0.200
       ![Define Scope](images/define_scope.png)
       
+      
       - Gateway: 172.16.0.1
+      
       ![Add Default Gateway](images/add_default_gateway.png)
       
+      
       - Domain Name DNS Servers: `mydomain.com` and 127.0.0.1
+      
       ![DHCP Scope Screenshot](images/dn_and_dnsservers.png)
       
     - Authorized DHCP Server
