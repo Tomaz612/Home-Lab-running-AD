@@ -105,18 +105,28 @@ The infrastructure was designed not only to deploy a domain environment, but als
 - Install Remote Access via Server Manager (Add roles and features)
   - Select Routing
 - Configuration path:
-  - Server Manager → Tools -> Routing and Remote Access → Network Address Translation (NAT)
+  - Server Manager → Tools → Routing and Remote Access
+    - DC (local) → Configure and Enable Routing and Remote Access → NAT
   ![RAS NAT Screenshot](images/ras-nat.png)
 
 ---
 
 ### 4️⃣ DHCP Configuration
-- Configure a new scope:
-  - IP range: 172.16.0.100 – 172.16.0.200
-  - Gateway: 172.16.0.1
-  - DNS: 127.0.0.1
-  - Domain Name: `mydomain.com`  
-  ![DHCP Scope Screenshot](images/dhcp-scope.png)
+- Install DHCP Server via Server Manager (Add roles and features)
+- Configuration path:
+  - Server Manager → Tools → DHCP
+    - IPv4 → New Scope 
+      - IP range: 172.16.0.100 – 172.16.0.200
+      ![Define Scope](images/define_scope.png)
+      
+      - Gateway: 172.16.0.1
+      ![Add Default Gateway](images/add_default_gateway.png)
+      
+      - Domain Name DNS Servers: `mydomain.com` and 127.0.0.1
+      ![DHCP Scope Screenshot](images/dn_and_dnsservers.png)
+      
+    - Authorized DHCP Server
+    ![Authorized DHCP Server](images/authorized.png)
 
 ---
 
