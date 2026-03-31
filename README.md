@@ -127,7 +127,7 @@ The infrastructure was designed not only to deploy a domain environment, but als
       
       - Configure **DNS settings**:
         - Parent domain: `mydomain.com`
-        - Preferred DNS server: 127.0.0.1
+        - Preferred DNS server: 172.16.0.1
       
       ![DHCP Scope Screenshot](images/dn_and_dnsservers.png)
       
