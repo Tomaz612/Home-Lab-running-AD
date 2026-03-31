@@ -139,14 +139,21 @@ The infrastructure was designed not only to deploy a domain environment, but als
 
 ### 5️⃣ Creating 1,000 Users via PowerShell
 - Script: `scripts/create-users.ps1`
-- Default password: `Password1`
 - Username format: first letter of the first name + last name (e.g., Tomas Oliveira → `toliveira`)
-- Procedure:
-  1. Read `name.txt` containing the list of names.
-  2. Convert the password into a secure string object.
+- **Procedure**:
+  1. Read `name.txt` containing the list of names
+  2. Convert the password into a **secure string**
   3. Create the `_USERS` OU.
-  4. Loop through the list and create each user in AD.  
-  ![PowerShell Script Screenshot](images/powershell-script.png)  
+  4. Loop through the list and create each user in AD. 
+- Copy the entire scripts folder to the Windows Server 2019 machine
+- Open **PowerShell ISE** as Administrator
+  - Set the execution policy:
+    - `Set-ExecutionPolicy Unrestricted`
+    ⚠️ (For lab use only — not recommended in production environments)
+    
+  - Navigate to the script directory (/scripts)
+  - Run the script (Click **Run** / **Play**)
+  ![PowerShell Script Screenshot](images/powershell-script.png) 
   ![AD Users - 1000 Users](images/ad-users.png)
 
 ---
