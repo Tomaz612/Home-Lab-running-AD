@@ -76,21 +76,28 @@ The infrastructure was designed not only to deploy a domain environment, but als
 - Install Active Directory Domain Services via Server Manager (Add roles and features).
   ![Install Active Directory Domain Services](images/install_ad_ds.png)
   
-- In Post-deployment Configuration, Create a new **forest**: `mydomain.com`
+- In **Post-deployment Configuration**, Create a new **forest**: `mydomain.com`
 - Restart the server.
-- Go to Active Directory Users and Computers
-  - Create the folder `_ADMINS` (OU) and an **account**:
+- Go to **Active Directory Users and Computers**:
+  - Create an Organizational Unit (OU) named _ADMINS
+  - Create a new user account inside the OU:
   ![AD Users & Computers - Admin](images/admin-account.png)
-- Make it an **admin** account.
-  - Right click in the User -> Properties -> Member of -> Add 
-- Log in using the created admin account.
+- Grant administrative privileges to the account:
+  - Right-click in the User -> **Properties** -> **Member of** -> **Add**
+  ![Add the user to the Domain Admins group](images/add_to_domain_admins.png)
+  
+  - Click Apply
+  ![User added to the Domain Admins group](images/added_to_domain_admins.png)
+- Log in using the newly created admin account.
 
 ---
 
 ### 3️⃣ NAT / RAS Configuration
 - Allow Windows 10 clients to access the Internet through the DC.
+- Install Remote Access via Server Manager (Add roles and features)
+  - Select Routing
 - Configuration path:
-  - Server Manager → Remote Access → Routing and Remote Access → Network Address Translation (NAT)  
+  - Server Manager → Tools -> Routing and Remote Access → Network Address Translation (NAT)
   ![RAS NAT Screenshot](images/ras-nat.png)
 
 ---
